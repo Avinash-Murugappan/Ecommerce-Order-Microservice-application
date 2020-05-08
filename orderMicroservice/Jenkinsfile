@@ -28,7 +28,7 @@ node {
      sh 'docker build -t sai288/my-app:order1.1 .'
     }
     stage('Push Docker Image to DocketHub'){
-     sh 'docker login -u sai288 -p swefall2018'
+     sh 'docker login -u username -p password'
      sh 'docker push sai288/my-app:order1.1'
     }
 }
