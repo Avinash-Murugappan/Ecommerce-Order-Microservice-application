@@ -7,4 +7,8 @@ This micro-service has been implemented using an MVC architecture and has its ow
 - Rendering Engine: Thymeleaf
 - Back-End: JAVA 1.8
 - Database: MongoDB
+- CI/CD Automation: Jenkins
+- Acceptance Testing: SonarQube (integrated with jenkins)
+- Junit Testing: Mockito
+- Containerizing Tool: Docker
 
