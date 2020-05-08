@@ -1,0 +1,25 @@
+node {
+    stage('SCM Checkout'){
+        git credentialsId: 'bit', url: 'https://Avinash-m@bitbucket.org/scrummybearsgroup/orders.git'
+    }
+    stage('Mvn Package'){
+    def mvnHome = tool name: 'maven-3', type: 'maven'
+    def mvnCMD = "${mvnHome}/bin/mvn"
+    sh  "${mvnCMD} clean package"
+    }
+    
+    stage('SonarQube Analysis') {
+    def mvnHome =  tool name: 'maven-3', type: 'maven'
+    withSonarQubeEnv('sonar-6') { 
+    sh "${mvnHome}/bin/mvn sonar:sonar"
+        }
+    }
+    
+     stage('Build Docker Image'){
+     sh 'docker build -t sai288/my-app:order1 .'
+    }
+    stage('Push Docker Image'){
+     sh 'docker login -u sai288 -p swefall2018'
+     sh 'docker push sai288/my-app:order1'
+    }
+}

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.Scrummybears.Order.OrderApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.425 s - in com.Scrummybears.Order.OrderApplicationTests
